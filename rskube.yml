@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs27
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      type: app
+  template:
+    metadata:
+      name: pod1
+      labels:
+        type: app
+    spec:
+      containers:
+      - name: container1
+        image: akshayngawali/image2711
+        ports:
+        - containerPort: 80
+          name: http
